@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Com and Lst File",
+            "command": "nasm",
+            "args": [
+                "${file}",
+                "-l",
+                "${fileBasenameNoExtension}.lst",
+                "-o",
+                "${fileBasenameNoExtension}.com"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build Com and Lst File",
+            "command": "dosbox",
+            "args": [
+                "-c",
+                "afd ${fileBasenameNoExtension}.com"
+            ],
+        }
+    ]
+}
